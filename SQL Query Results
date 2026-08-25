@@ -1,0 +1,404 @@
+# 📊 SQL Query Results — Indian E-Commerce Sales Analysis
+
+All 25 queries executed against the actual dataset (40,000 customers, 2,000 products, 250,000 sales records). Large result sets are truncated to the top rows shown below.
+
+---
+
+## Q1. How many total customers, products, and orders are there in the database?
+*Difficulty: Easy*
+
+|   total_customers |   total_products |   total_orders |
+|------------------:|-----------------:|---------------:|
+|             40000 |             2000 |         250000 |
+
+---
+
+## Q2. What is the total number of orders placed each year, and how many unique customers placed orders each year?
+*Difficulty: Easy*
+
+|   order_year |   total_orders |   unique_customers |
+|-------------:|---------------:|-------------------:|
+|         2024 |          70141 |              33050 |
+|         2025 |         120519 |              38024 |
+|         2026 |          59340 |              30840 |
+
+---
+
+## Q3. What is the total revenue generated from all delivered orders?
+*Difficulty: Easy*
+
+|   total_revenue_delivered |
+|--------------------------:|
+|               4.74157e+09 |
+
+---
+
+## Q4. Which are the top 5 product categories by number of products listed?
+*Difficulty: Easy*
+
+| Category    |   num_products |
+|:------------|---------------:|
+| Electronics |            290 |
+| Fashion     |            285 |
+| Home        |            285 |
+| Beauty      |            285 |
+| Sports      |            285 |
+
+---
+
+## Q5. What is the average, minimum, and maximum Selling_Price of products?
+*Difficulty: Easy*
+
+|   avg_price |   min_price |   max_price |
+|------------:|------------:|------------:|
+|     13180.3 |       26.13 |      136973 |
+
+---
+
+## Q6. How many customers belong to each Customer_Tier?
+*Difficulty: Easy*
+
+| Customer_Tier   |   num_customers |
+|:----------------|----------------:|
+| Platinum        |           27349 |
+| Gold            |            6692 |
+| Silver          |            5959 |
+
+---
+
+## Q7. What are the top 5 states with the highest number of registered customers?
+*Difficulty: Easy*
+
+| State       |   num_customers |
+|:------------|----------------:|
+| UP          |            5218 |
+| Haryana     |            5124 |
+| Rajasthan   |            5057 |
+| Punjab      |            4083 |
+| Maharashtra |            4050 |
+
+---
+
+## Q8. What are the different Payment_Mode values, and how many orders used each?
+*Difficulty: Easy*
+
+| Payment_Mode   |   total_orders |
+|:---------------|---------------:|
+| UPI            |         128474 |
+| COD            |          82093 |
+| Debit Card     |          28856 |
+| Credit Card    |          10577 |
+
+---
+
+## Q9. How many products have zero stock remaining (Stock_Quantity = 0)?
+*Difficulty: Easy*
+
+|   out_of_stock_products |
+|------------------------:|
+|                       0 |
+
+---
+
+## Q10. What is the monthly revenue trend from June 2024 to June 2026?
+*Difficulty: Medium*
+
+| month   |   total_orders |     revenue |
+|:--------|---------------:|------------:|
+| 2024-06 |           7962 | 1.90829e+08 |
+| 2024-07 |           8107 | 1.91387e+08 |
+| 2024-08 |           8088 | 1.90099e+08 |
+| 2024-09 |           7725 | 1.81965e+08 |
+| 2024-10 |           7985 | 1.89217e+08 |
+| 2024-11 |           7882 | 1.87633e+08 |
+| 2024-12 |           8103 | 1.92913e+08 |
+| 2025-01 |           8216 | 1.94711e+08 |
+| 2025-02 |           7378 | 1.72127e+08 |
+| 2025-03 |           8242 | 1.9461e+08  |
+| 2025-04 |           7979 | 1.93896e+08 |
+| 2025-05 |           8213 | 1.94454e+08 |
+| 2025-06 |           7903 | 1.85586e+08 |
+| 2025-07 |           8156 | 1.92451e+08 |
+| 2025-08 |           8171 | 1.94886e+08 |
+
+*(showing 15 of 25 rows)*
+
+---
+
+## Q11. Who are the top 10 customers by total amount spent?
+*Difficulty: Medium*
+
+| Customer_ID   | Customer_Name   | Customer_Tier   |   total_orders |      total_spent |
+|:--------------|:----------------|:----------------|---------------:|-----------------:|
+| CUST00018065  | Raj Gupta       | Platinum        |             10 |      1.07144e+06 |
+| CUST00017168  | Rohan Pandey    | Platinum        |             11 | 947343           |
+| CUST00000699  | Zara Ansari     | Platinum        |             10 | 913494           |
+| CUST00023830  | Rohan Yadav     | Platinum        |              8 | 898661           |
+| CUST00004600  | Aditya Yadav    | Platinum        |              9 | 890132           |
+| CUST00033067  | Rahul Iyer      | Platinum        |             11 | 888994           |
+| CUST00020280  | Harsh Pandey    | Platinum        |              7 | 877895           |
+| CUST00021066  | Ananya Shah     | Platinum        |             13 | 876933           |
+| CUST00003487  | Swati Mehta     | Platinum        |             11 | 869403           |
+| CUST00009202  | Priya Gupta     | Platinum        |             12 | 843528           |
+
+---
+
+## Q12. Which 10 products generated the highest revenue?
+*Difficulty: Medium*
+
+| Product_Name       | Category    | Brand   |   units_sold |     revenue |
+|:-------------------|:------------|:--------|-------------:|------------:|
+| Noise Watch V1     | Electronics | Noise   |         2308 | 1.9346e+08  |
+| Samsung Mobile V4  | Electronics | Samsung |         2820 | 1.74667e+08 |
+| boAt Headphones V8 | Electronics | boAt    |         2688 | 1.5878e+08  |
+| HP Laptop V5       | Electronics | HP      |         2546 | 1.58264e+08 |
+| boAt Headphones V6 | Electronics | boAt    |         3473 | 1.41722e+08 |
+| Noise Watch V7     | Electronics | Noise   |         2629 | 1.4123e+08  |
+| Apple iPhone V7    | Electronics | Apple   |         2620 | 1.35871e+08 |
+| HP Laptop V10      | Electronics | HP      |         2813 | 1.32167e+08 |
+| HP Laptop V4       | Electronics | HP      |         1804 | 1.25117e+08 |
+| boAt Headphones V2 | Electronics | boAt    |         2247 | 1.19326e+08 |
+
+---
+
+## Q13. What is the average delivery time (in days) per state?
+*Difficulty: Medium*
+
+| State       |   avg_delivery_days |
+|:------------|--------------------:|
+| Tamil Nadu  |                 4.5 |
+| West Bengal |                 4.5 |
+| Gujarat     |                 4.5 |
+| Delhi       |                 4.5 |
+| UP          |                 4.5 |
+| Punjab      |                 4.5 |
+| Haryana     |                 4.5 |
+| Karnataka   |                 4.5 |
+| Rajasthan   |                 4.5 |
+| Maharashtra |                 4.5 |
+
+---
+
+## Q14. What percentage of orders used a coupon code, and how does average order value compare with vs without a coupon?
+*Difficulty: Medium*
+
+| coupon_used   |   total_orders |   pct_of_orders |   avg_order_value |
+|:--------------|---------------:|----------------:|------------------:|
+| No Coupon     |         199815 |           79.93 |           23889.4 |
+| With Coupon   |          50185 |           20.07 |           23059.4 |
+
+---
+
+## Q15. Which payment mode has the highest average order value?
+*Difficulty: Medium*
+
+| Payment_Mode   |   total_orders |   avg_order_value |
+|:---------------|---------------:|------------------:|
+| Credit Card    |          10577 |           26534.9 |
+| UPI            |         128474 |           24724.2 |
+| COD            |          82093 |           22436.9 |
+| Debit Card     |          28856 |           21891.7 |
+
+---
+
+## Q16. What is the average customer rating per product category?
+*Difficulty: Medium*
+
+| Category    |   avg_customer_rating |   num_ratings |
+|:------------|----------------------:|--------------:|
+| Electronics |                  4.4  |         32040 |
+| Fashion     |                  4.4  |         23813 |
+| Home        |                  4.4  |         16144 |
+| Grocery     |                  4.4  |         16209 |
+| Beauty      |                  4.4  |          8076 |
+| Books       |                  4.39 |          9694 |
+| Sports      |                  4.39 |         14054 |
+
+---
+
+## Q17. Which cities have the highest number of cancelled or returned orders?
+*Difficulty: Medium*
+
+| City      | Order_Status   |   total_orders |
+|:----------|:---------------|---------------:|
+| Varanasi  | Returned       |            366 |
+| Howrah    | Cancelled      |            361 |
+| Chennai   | Cancelled      |            361 |
+| Sohna     | Returned       |            358 |
+| Chennai   | Returned       |            358 |
+| Mumbai    | Returned       |            357 |
+| Amritsar  | Cancelled      |            356 |
+| Howrah    | Returned       |            351 |
+| New Delhi | Cancelled      |            345 |
+| Madurai   | Cancelled      |            345 |
+
+---
+
+## Q18. What is the average discount percentage offered per brand, and how does it relate to units sold?
+*Difficulty: Medium*
+
+| Brand      |   avg_discount_pct |   total_units_sold |
+|:-----------|-------------------:|-------------------:|
+| Nescafe    |              31.82 |               8363 |
+| Peter      |              30.91 |              12641 |
+| NCERT      |              29.51 |               5055 |
+| Aashirvaad |              29.22 |               8378 |
+| Comics     |              29.16 |               5071 |
+| Apple      |              28.79 |              16650 |
+| boAt       |              28.57 |              16700 |
+| Dumbbells  |              28.41 |               7342 |
+| Notebook   |              28.39 |               4999 |
+| Urban      |              28.36 |               8366 |
+| Lays       |              28.29 |               8179 |
+| Dove       |              28.06 |               4063 |
+| Noise      |              28.06 |              16807 |
+| Fiction    |              28.03 |               5096 |
+| Mamaearth  |              28.01 |               4088 |
+
+*(showing 15 of 33 rows)*
+
+---
+
+## Q19. Identify customers who haven't placed an order in the last 90 days (churn risk list).
+*Difficulty: Hard*
+
+| Customer_ID   | Customer_Name   | last_order_date     |   days_inactive |
+|:--------------|:----------------|:--------------------|----------------:|
+| CUST00025648  | Aarav Tiwari    | 2024-06-02 00:00:00 |             758 |
+| CUST00019258  | Jaspreet Kaur   | 2024-06-04 00:00:00 |             756 |
+| CUST00003036  | Simran Reddy    | 2024-06-04 00:00:00 |             756 |
+| CUST00035605  | Zain Mirza      | 2024-06-06 00:00:00 |             754 |
+| CUST00009933  | Pooja Iyer      | 2024-06-06 00:00:00 |             754 |
+| CUST00007828  | Harsh Patel     | 2024-06-09 00:00:00 |             751 |
+| CUST00011036  | Suresh Kulkarni | 2024-06-09 00:00:00 |             751 |
+| CUST00018618  | Swati Mehta     | 2024-06-13 00:00:00 |             747 |
+| CUST00032982  | Kavya Mishra    | 2024-06-15 00:00:00 |             745 |
+| CUST00013629  | Karan Kumar     | 2024-06-16 00:00:00 |             744 |
+| CUST00031046  | Jasleen Kaur    | 2024-06-19 00:00:00 |             741 |
+| CUST00011382  | Ananya Verma    | 2024-06-19 00:00:00 |             741 |
+| CUST00028246  | Suresh Kumar    | 2024-06-19 00:00:00 |             741 |
+| CUST00011622  | Anjali Sharma   | 2024-06-20 00:00:00 |             740 |
+| CUST00012611  | Preeti Mehta    | 2024-06-23 00:00:00 |             737 |
+
+*(showing 15 of 18906 rows)*
+
+---
+
+## Q20. Using RFM logic, segment customers into quartiles based on total spend (NTILE).
+*Difficulty: Hard*
+
+| Customer_ID   |      total_spent |   spend_quartile |
+|:--------------|-----------------:|-----------------:|
+| CUST00018065  |      1.07144e+06 |                1 |
+| CUST00017168  | 947343           |                1 |
+| CUST00000699  | 913494           |                1 |
+| CUST00023830  | 898661           |                1 |
+| CUST00004600  | 890132           |                1 |
+| CUST00033067  | 888994           |                1 |
+| CUST00020280  | 877895           |                1 |
+| CUST00021066  | 876933           |                1 |
+| CUST00003487  | 869403           |                1 |
+| CUST00009202  | 843528           |                1 |
+| CUST00021754  | 833960           |                1 |
+| CUST00020553  | 832728           |                1 |
+| CUST00005328  | 823315           |                1 |
+| CUST00023160  | 819406           |                1 |
+| CUST00020290  | 803191           |                1 |
+
+*(showing 15 of 39914 rows)*
+
+---
+
+## Q21. Find the month-over-month revenue growth rate (%) using LAG.
+*Difficulty: Hard*
+
+| month   |     revenue |   prev_month_revenue |   mom_growth_pct |
+|:--------|------------:|---------------------:|-----------------:|
+| 2024-06 | 1.90829e+08 |        nan           |           nan    |
+| 2024-07 | 1.91387e+08 |          1.90829e+08 |             0.29 |
+| 2024-08 | 1.90099e+08 |          1.91387e+08 |            -0.67 |
+| 2024-09 | 1.81965e+08 |          1.90099e+08 |            -4.28 |
+| 2024-10 | 1.89217e+08 |          1.81965e+08 |             3.99 |
+| 2024-11 | 1.87633e+08 |          1.89217e+08 |            -0.84 |
+| 2024-12 | 1.92913e+08 |          1.87633e+08 |             2.81 |
+| 2025-01 | 1.94711e+08 |          1.92913e+08 |             0.93 |
+| 2025-02 | 1.72127e+08 |          1.94711e+08 |           -11.6  |
+| 2025-03 | 1.9461e+08  |          1.72127e+08 |            13.06 |
+| 2025-04 | 1.93896e+08 |          1.9461e+08  |            -0.37 |
+| 2025-05 | 1.94454e+08 |          1.93896e+08 |             0.29 |
+| 2025-06 | 1.85586e+08 |          1.94454e+08 |            -4.56 |
+| 2025-07 | 1.92451e+08 |          1.85586e+08 |             3.7  |
+| 2025-08 | 1.94886e+08 |          1.92451e+08 |             1.27 |
+
+*(showing 15 of 25 rows)*
+
+---
+
+## Q22. Identify products at risk of stockout - high sales velocity but low remaining stock.
+*Difficulty: Hard*
+
+| Product_Name       | Category    |   Stock_Quantity |   total_units_sold |
+|:-------------------|:------------|-----------------:|-------------------:|
+| boAt Headphones V5 | Electronics |               15 |                296 |
+| Noise Watch V2     | Electronics |               15 |                282 |
+| Samsung Mobile V2  | Electronics |               14 |                276 |
+| Titan Watch V9     | Fashion     |               19 |                195 |
+| Levis Jeans V6     | Fashion     |               12 |                173 |
+| Fortune Oil V10    | Grocery     |               17 |                159 |
+| IKEA Chair V10     | Home        |               17 |                159 |
+| Nescafe Coffee V2  | Grocery     |               19 |                152 |
+| Lays Chips V8      | Grocery     |               13 |                145 |
+| Puma Shoes V9      | Sports      |               13 |                142 |
+| Decathlon Cycle V2 | Sports      |               11 |                139 |
+| Lays Chips V6      | Grocery     |               10 |                139 |
+| Decathlon Cycle V4 | Sports      |               18 |                123 |
+| Puma Shoes V8      | Sports      |               18 |                117 |
+| Yoga Mat V1        | Sports      |               12 |                117 |
+
+*(showing 15 of 20 rows)*
+
+---
+
+## Q23. Find the top-selling product in each category using RANK().
+*Difficulty: Hard*
+
+| Category    | Product_Name         |          revenue |
+|:------------|:---------------------|-----------------:|
+| Electronics | Noise Watch V1       |      1.9346e+08  |
+| Home        | Urban Ladder Sofa V5 |      3.08688e+07 |
+| Sports      | Dumbbells V1         |      1.93743e+07 |
+| Fashion     | Nike Shoes V9        |      1.62775e+07 |
+| Beauty      | Lakme Lipstick V10   |      1.87243e+06 |
+| Grocery     | Haldiram Snacks V1   |      1.70096e+06 |
+| Books       | Stationery Set V3    | 653501           |
+
+---
+
+## Q24. Calculate each customer's repeat purchase rate by Customer_Tier.
+*Difficulty: Hard*
+
+| Customer_Tier   |   total_customers |   repeat_customers |   repeat_purchase_rate_pct |
+|:----------------|------------------:|-------------------:|---------------------------:|
+| Platinum        |             27349 |              27292 |                      99.79 |
+| Gold            |              6692 |               6614 |                      98.83 |
+| Silver          |              5873 |               5525 |                      94.07 |
+
+---
+
+## Q25. Using a CTE, find the top 10 most frequent customers by average days between orders (min 3 orders).
+*Difficulty: Hard*
+
+| Customer_ID   |   total_orders |   avg_days_between_orders |
+|:--------------|---------------:|--------------------------:|
+| CUST00037685  |              2 |                       4   |
+| CUST00033872  |              2 |                       4.5 |
+| CUST00012182  |              2 |                       5.5 |
+| CUST00033387  |              2 |                       5.5 |
+| CUST00021233  |              2 |                       6.5 |
+| CUST00012694  |              2 |                       8.5 |
+| CUST00033900  |              3 |                       9   |
+| CUST00011235  |              2 |                       9.5 |
+| CUST00027413  |              2 |                      10   |
+| CUST00014674  |              2 |                      12.5 |
+
+---
