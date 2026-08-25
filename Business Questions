@@ -1,0 +1,50 @@
+# 📝 SQL Business Questions — Indian E-Commerce Sales Analysis
+
+This document lists 25 business questions used to analyze the e-commerce dataset (`customers`, `products`, `sales`), organized by difficulty level from beginner to advanced SQL concepts.
+
+---
+
+## 🟢 Easy (Q1–Q9)
+*Basic SELECT, WHERE, GROUP BY, single-table aggregations*
+
+1. How many total customers, products, and orders are there in the database?
+2. What is the total number of orders placed each year, and how many unique customers placed orders each year?
+3. What is the total revenue generated from all delivered orders?
+4. Which are the top 5 product categories by number of products listed?
+5. What is the average, minimum, and maximum Selling_Price of products?
+6. How many customers belong to each Customer_Tier?
+7. What are the top 5 states with the highest number of registered customers?
+8. What are the different Payment_Mode values, and how many orders used each?
+9. How many products have zero stock remaining (Stock_Quantity = 0)?
+
+---
+
+## 🟡 Medium (Q10–Q18)
+*Multi-table joins, aggregations, grouping across tables*
+
+10. What is the monthly revenue trend from June 2024 to June 2026?
+11. Who are the top 10 customers by total amount spent (join customers + sales)?
+12. Which 10 products generated the highest revenue?
+13. What is the average delivery time (in days) per state?
+14. What percentage of orders used a coupon code, and how does average order value compare with vs without a coupon?
+15. Which payment mode has the highest average order value?
+16. What is the average customer rating per product category?
+17. Which cities have the highest number of cancelled or returned orders?
+18. What is the average discount percentage offered per brand, and how does it relate to units sold?
+
+---
+
+## 🔴 Hard (Q19–Q25)
+*Window functions, subqueries, CTEs, business logic*
+
+19. Identify customers who haven't placed an order in the last 90 days (from the most recent order date in the dataset) — a churn risk list.
+20. Using RFM logic, segment customers into quartiles based on total spend (`NTILE(4)`).
+21. Find the month-over-month revenue growth rate (%) using a window function (`LAG`).
+22. Identify products that are "at risk" of stockout — high sales velocity but low remaining Stock_Quantity.
+23. Find the top-selling product in each category (highest revenue per category) using a window function (`RANK()` or `ROW_NUMBER()`).
+24. Calculate each customer's repeat purchase rate — the % of customers who ordered more than once, broken down by Customer_Tier.
+25. Using a CTE, calculate each customer's average days between orders, and identify the top 10 most "frequent" customers (shortest average gap between orders, with at least 3 orders).
+
+---
+
+*Answers to these questions are provided in the accompanying SQL query files (`queries/`), organized by difficulty level.*
