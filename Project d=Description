@@ -1,0 +1,39 @@
+## 📊 Indian E-Commerce Sales Analysis — SQL Project
+
+### 📌 Overview
+This project presents an end-to-end SQL analysis of a simulated Indian e-commerce dataset, built and executed in MySQL Workbench. It models a realistic online retail backend with customers, products, and transactional sales data connected through primary and foreign key relationships, and uses SQL to answer real business questions — from basic revenue summaries to advanced customer segmentation and churn analysis.
+
+### 🗂️ Schema Summary
+
+| Table Name | Rows | Columns |
+|---|---|---|
+| customers | 40,000 | Customer_ID, Customer_Name, Gender, Age, Age_Group, Date_of_Birth, Email, Phone, City, State, Pincode, Registration_Date, Customer_Tier, Total_Orders, Total_Spent |
+| products | 2,000 | Product_ID, Product_Name, Category, Brand, Original_Price, Discount_Percent, Discount_Amount, Selling_Price, Stock_Quantity, Weight_kg, Avg_Rating, Total_Reviews |
+| sales | 250,000 | Order_ID, Customer_ID, Product_ID, Order_Date, Order_Time, Delivery_Date, Quantity, Unit_Price, Order_Value, Shipping_Cost, Coupon_Code, Coupon_Discount, Total_Amount, Payment_Mode, Order_Status, Rating, Review_Text, City, State, Customer_Age, Customer_Age_Group |
+
+### 🔑 Keys & Relationships
+- `customers.Customer_ID` → Primary Key
+- `products.Product_ID` → Primary Key
+- `sales.Order_ID` → Primary Key
+- `sales.Customer_ID` → Foreign Key referencing `customers`
+- `sales.Product_ID` → Foreign Key referencing `products`
+
+Data spans **June 2024 to June 2026** (~2 years of transactions).
+
+### 🛠️ Tools
+MySQL Workbench, SQL (Joins, Aggregations, Window Functions, CTEs, Subqueries)
+
+### 📌 What This Project Covers
+- Database schema design with proper primary and foreign key constraints
+- Data import and validation (row counts, orphan record checks, referential integrity)
+- 20 business questions across easy, medium, and hard difficulty levels
+- Revenue trends, customer segmentation (RFM), churn risk analysis, delivery performance, coupon effectiveness, and product/category performance
+
+### 🚀 How to Use This Project
+1. Run the schema script to create the `customers`, `products`, and `sales` tables with proper keys
+2. Import the CSV data into each table
+3. Run the queries (organized by difficulty: easy → medium → hard)
+4. Review the insights derived from each query result
+
+### 🙋 About
+This project was built as a hands-on SQL portfolio piece to demonstrate practical database design and analytical querying skills on a realistic, large-scale e-commerce dataset.
